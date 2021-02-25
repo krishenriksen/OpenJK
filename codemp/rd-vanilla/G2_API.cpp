@@ -668,8 +668,6 @@ void RestoreGhoul2InfoArray()
 #endif
 			singleton->Deserialize ((const char *)data, size);
 		Z_Free ((void *)data);
-
-		assert (read == size);
 	}
 }
 
@@ -681,8 +679,6 @@ void SaveGhoul2InfoArray()
 	size_t written =
 #endif
 		singleton->Serialize ((char *)data);
-
-	assert (written == size);
 
 	if ( !ri.PD_Store (PERSISTENT_G2DATA, data, size) )
 	{
